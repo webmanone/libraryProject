@@ -45,5 +45,17 @@ background-color: rgb(48, 46, 46);
 flex-basis: 30%;
 width: 98%;
 border-radius: 10px;
+display: flex;
+justify-content: center;
+}
 
+.bookInput {
+  
+}
+
+.book {
+  width: 40px;
+  height: 100%;
+  background-color: aliceblue;
+  align-self: flex-start;
 }
