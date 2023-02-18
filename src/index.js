@@ -35,12 +35,19 @@ function Shelf() {
     );
   }
 
-  function handleAddBookClick() {
+  function handleAddBookClick(e) {
+    e.stopPropagation();
     addBook(book);
+    setShowNewBook(false);
+  }
+
+  function handleCancelClick(e) {
+    e.stopPropagation();
+    setShowNewBook(false);
   }
 
   function handleShelfClick() {
-    setShowNewBook(showNewBook => !showNewBook);
+    setShowNewBook(true);
   }
 
   function newBook() {
@@ -50,6 +57,7 @@ function Shelf() {
           <input type="text" name="title" value={book.title} onChange={updateBook} />
           <input type="text" name="author" value={book.author} onChange={updateBook} />
           <button onClick={handleAddBookClick}>Add Book</button>
+          <button onClick={handleCancelClick}>Cancel</button>
         </div>
       );
     } else {
