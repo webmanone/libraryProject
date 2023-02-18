@@ -16,8 +16,10 @@ function Shelf() {
     title: "title",
     author: "author"
   });
+  
   const [showNewBook, setShowNewBook] = useState(false);
-
+  const [books, setBooks] = useState([]);
+ 
   function updateBook(e) {
     setBook({
       ...book,
@@ -27,12 +29,8 @@ function Shelf() {
 
   function addBook(book) {
     setBookCounter(bookCounter + 1);
-    return (
-    <div className="book">
-      {book.title} by {book.author}
-      {/*onhover, show title and author in note*/}
-    </div>
-    );
+    setBooks([...books, book]);
+    
   }
 
   function handleAddBookClick(e) {
@@ -68,6 +66,11 @@ function Shelf() {
   return (
     <div onClick={handleShelfClick} className="shelf">
       {newBook()}
+      {books.map((book, index) => (
+        <div key={index} className="book">
+          {book.title} by {book.author}
+        </div>
+      ))}
     </div>
   );
 }
