@@ -64,14 +64,16 @@ function Shelf() {
   }
 
   return (
-    <div onClick={handleShelfClick} className="shelf">
+    <div onClick={handleShelfClick} className="shelfContainer">
       {newBook()}
+    <div className="shelf">
       {books.map((book, index) => (
         <div key={index} className="book">
-          {book.title} by {book.author}
+          {book.title} - {book.author}
         </div>
       ))}
     </div>
+   </div>
   );
 }
 
