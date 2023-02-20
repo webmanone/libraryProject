@@ -52,7 +52,7 @@ h1 {
 .shelf {
 background-color: rgb(48, 46, 46);
 flex-basis: 30%;
-width: 98%;
+width: 100%;
 border-radius: 10px;
 display: flex;
 height: 100%;
@@ -70,8 +70,15 @@ z-index: 1;
 
 .book {
   flex-basis: 5%;
-  height: 100%;
-  background-color: aliceblue;
-  align-self: flex-start;
-  margin-left: 15px;
+  background-color: #f5e6de;
+  margin-left: 10px;
+  writing-mode: vertical-rl;
+  text-align: center;
+  text-orientation: mixed;
+  align-items: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid;
 }

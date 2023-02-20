@@ -69,7 +69,7 @@ function Shelf() {
     <div className="shelf">
       {books.map((book, index) => (
         <div key={index} className="book">
-          {book.title} by {book.author}
+          {book.title} - {book.author}
         </div>
       ))}
     </div>
