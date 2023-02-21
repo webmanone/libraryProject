@@ -57,6 +57,9 @@ border-radius: 10px;
 display: flex;
 height: 100%;
 z-index: 1;
+box-sizing: border-box;
+padding-left: 10px;
+gap: 10px;
 }
 
 .bookInput {
@@ -71,7 +74,6 @@ z-index: 1;
 .book {
   flex-basis: 5%;
   background-color: #f5e6de;
-  margin-left: 10px;
   writing-mode: vertical-rl;
   text-align: center;
   text-orientation: mixed;
@@ -81,4 +83,12 @@ z-index: 1;
   align-items: center;
   border-radius: 8px;
   border: 2px solid;
+}
+
+.shelfError {
+  text-align: center;
+  z-index: 10;
+  height: 50%;
+  background-color: red;
+  position: relative;
 }
