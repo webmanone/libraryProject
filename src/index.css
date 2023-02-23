@@ -83,12 +83,28 @@ gap: 10px;
   align-items: center;
   border-radius: 8px;
   border: 2px solid;
+  position: relative;
+  cursor: default;
 }
 
-.shelfError {
-  text-align: center;
-  z-index: 10;
-  height: 50%;
-  background-color: red;
-  position: relative;
+.book:hover .deleteBook {
+  visibility: visible;
+  opacity: 1;
 }
+
+.deleteBook {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+
