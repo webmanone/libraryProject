@@ -5,8 +5,8 @@ function Shelf() {
     const [bookCounter, setBookCounter] = useState(0); //initialises hook to 0 that will track how many books are in a shelf
   
     const [book, setBook] = useState({
-      title: "title",
-      author: "author"
+      title: "",
+      author: ""
     }); //initialises hook that will track the latest book entered by the user
     
     const [showInput, setShowInput] = useState(false); //initialises status of the book input div, automatically false
@@ -33,6 +33,7 @@ function Shelf() {
     function handleAddBookClick(e) {
       e.stopPropagation();
       addBook(book);
+      setBook({ title: "", author: "" });
     }
   
     //function that hides the input div when the cancel button is clicked
@@ -60,10 +61,11 @@ function Shelf() {
       if (showInput) {
         return (
           <div className="bookInput">
-            <input type="text" name="title" value={book.title} onChange={updateBook} />
-            <input type="text" name="author" value={book.author} onChange={updateBook} />
+            <input type="text" name="title" placeholder="Title" value={book.title} onChange={updateBook} />
+            <input type="text" name="author" placeholder="Author" value={book.author} onChange={updateBook} />
+            <br />
             <button onClick={handleAddBookClick}>Add Book</button>
-            <button onClick={handleCancelClick}>Cancel</button>
+            <button onClick={handleCancelClick}>Close</button>
           </div>
         );
       } else {
@@ -78,7 +80,7 @@ function Shelf() {
       <div className="shelf">
         {books.map((book, index) => (
           <div key={index} className="book">
-            {book.title} - {book.author}
+            {book.title}<br /><br />{book.author}
             <button className="deleteBook" onClick={() => handleDeleteBook(index)}>&times;</button>
           </div>
         ))}
