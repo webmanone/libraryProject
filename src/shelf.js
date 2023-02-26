@@ -61,11 +61,13 @@ function Shelf() {
       if (showInput) {
         return (
           <div className="bookInput">
-            <input type="text" name="title" placeholder="Title" value={book.title} onChange={updateBook} />
-            <input type="text" name="author" placeholder="Author" value={book.author} onChange={updateBook} />
+            <div className="inputHolder">
+              <input type="text" name="title" placeholder="Title" value={book.title} onChange={updateBook} />
+              <input type="text" name="author" placeholder="Author" value={book.author} onChange={updateBook} />
+            </div>
             <br />
-            <button onClick={handleAddBookClick}>Add Book</button>
-            <button onClick={handleCancelClick}>Close</button>
+              <button className="addBookButton" onClick={handleAddBookClick}>Add Book</button>
+              <button className="closeBookInput" onClick={handleCancelClick}>&times;</button>
           </div>
         );
       } else {
