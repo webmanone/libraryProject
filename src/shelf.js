@@ -52,6 +52,7 @@ function Shelf() {
       setBooks(prevBooks => {
         const newBooks = [...prevBooks]; // create a copy of the books array
         newBooks.splice(index, 1); // remove the book at the specified index
+        setShowInput(false);
         return newBooks; // return the updated books array to setBooks
       });
     }
@@ -82,7 +83,7 @@ function Shelf() {
       <div className="shelf">
         {books.map((book, index) => (
           <div key={index} className="book">
-            {book.title}<br /><br />{book.author}
+            {book.title}<div className="by">by</div>{book.author}
             <button className="deleteBook" onClick={() => handleDeleteBook(index)}>&times;</button>
           </div>
         ))}
