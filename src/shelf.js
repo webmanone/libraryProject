@@ -48,11 +48,11 @@ function Shelf() {
     }
 
     //function that deletes the book when clicked
-    function handleDeleteBook(index){
+    function handleDeleteBook(index, e){
+      e.stopPropagation();
       setBooks(prevBooks => {
         const newBooks = [...prevBooks]; // create a copy of the books array
         newBooks.splice(index, 1); // remove the book at the specified index
-        setShowInput(false);
         return newBooks; // return the updated books array to setBooks
       });
     }
@@ -84,7 +84,7 @@ function Shelf() {
         {books.map((book, index) => (
           <div key={index} className="book">
             {book.title}<div className="by">by</div>{book.author}
-            <button className="deleteBook" onClick={() => handleDeleteBook(index)}>&times;</button>
+            <button className="deleteBook" onClick={(e) => handleDeleteBook(index, e)}>&times;</button>
           </div>
         ))}
       </div>
