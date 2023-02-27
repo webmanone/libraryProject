@@ -42,7 +42,7 @@ function Shelf() {
       setShowInput(false);
     }
   
-    //functino that shows the input div when the shelf is clicked.
+    //function that shows the input div when the shelf is clicked.
     function handleShelfClick() {
       setShowInput(true);
     }
