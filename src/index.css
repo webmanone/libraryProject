@@ -185,3 +185,9 @@ gap: 10px;
   font-size: x-small;
   padding: 10px;
 }
+
+.bookPages {
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
