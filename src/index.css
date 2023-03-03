@@ -185,3 +185,15 @@ gap: 10px;
   font-size: x-small;
   padding: 10px;
 }
+
+.bookPages {
+  height: 90%;
+  width: 20%;
+  z-index: 10;
+  position: absolute;
+  background-color: aquamarine;
+  text-align: center;
+  top: 50%;
+  right: 50%;
+  transform: translateY(-50%) translateX(50%);
+}

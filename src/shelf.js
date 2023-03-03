@@ -11,6 +11,8 @@ function Shelf() {
     
     const [showInput, setShowInput] = useState(false); //initialises status of the book input div, automatically false
   
+    const [showBook, setShowBook] = useState(false); //initialises status of the book input div, automatically false
+
     const [books, setBooks] = useState([]); //initialises array that will hold each book in the shelf
    
     //function that changes the state of book to what the user has inputted. ... makes a copy of the object, e.target.name takes the value of the input name, (title and author) and updates the value
@@ -76,13 +78,39 @@ function Shelf() {
       }
     }
   
+ //function that opens the book when a book on the shelf is clicked
+ function handleBookClick(e) {
+  e.stopPropagation();
+  setShowBook(true);
+}
+
+//function that shows the book
+function bookPages(book){
+  if (showBook) {
+    return (
+      <div className='bookPages'>
+        
+      <div> Title: {book.title} </div>
+      <div> Author: {book.author} </div>
+      
+      </div>
+
+    )
+  }  else {
+    return null;
+  }
+
+
+}
+
     //return statement for the shelf component. map function included to loop through the books array and make sure the shelf contains the updated list of books
     return (
       <div onClick={handleShelfClick} className="shelfContainer">
+        {bookPages(book)}
         {bookInput()}
       <div className="shelf">
         {books.map((book, index) => (
-          <div key={index} className="book">
+          <div key={index} className="book" onClick={handleBookClick}>
             {book.title}<div className="by">by</div>{book.author}
             <button className="deleteBook" onClick={(e) => handleDeleteBook(index, e)}>&times;</button>
           </div>
