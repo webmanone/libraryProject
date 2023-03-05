@@ -14,6 +14,8 @@ function Shelf() {
     const [showBook, setShowBook] = useState(false); //initialises status of the book input div, automatically false
 
     const [books, setBooks] = useState([]); //initialises array that will hold each book in the shelf
+
+    const [selectedBook, setSelectedBook] = useState(null); //initialises which book has been clicked
    
     //function that changes the state of book to what the user has inputted. ... makes a copy of the object, e.target.name takes the value of the input name, (title and author) and updates the value
     function updateBook(e) {
@@ -42,6 +44,12 @@ function Shelf() {
     function handleCancelClick(e) {
       e.stopPropagation();
       setShowInput(false);
+    }
+
+    //function that hides the open book
+    function handleCancelPages(e) {
+      e.stopPropagation();
+      setShowBook(false);
     }
   
     //function that shows the input div when the shelf is clicked.
@@ -79,20 +87,24 @@ function Shelf() {
     }
   
  //function that opens the book when a book on the shelf is clicked
- function handleBookClick(e) {
+ function handleBookClick(e, book) {
   e.stopPropagation();
+  setSelectedBook(book);
   setShowBook(true);
+  setShowInput(false);
 }
 
 //function that shows the book
-function bookPages(book){
+function bookPages(){
   if (showBook) {
     return (
       <div className='bookPages'>
         
-      <div> Title: {book.title} </div>
-      <div> Author: {book.author} </div>
+      <div> Title: {selectedBook.title} </div>
+      <div> Author: {selectedBook.author} </div>
       
+      <button className="closePages" onClick={handleCancelPages}>&times;</button>
+
       </div>
 
     )
@@ -106,11 +118,11 @@ function bookPages(book){
     //return statement for the shelf component. map function included to loop through the books array and make sure the shelf contains the updated list of books
     return (
       <div onClick={handleShelfClick} className="shelfContainer">
-        {bookPages(book)}
+        {bookPages()}
         {bookInput()}
       <div className="shelf">
         {books.map((book, index) => (
-          <div key={index} className="book" onClick={handleBookClick}>
+          <div key={index} className="book" onClick={(e) => handleBookClick(e, book)}>
             {book.title}<div className="by">by</div>{book.author}
             <button className="deleteBook" onClick={(e) => handleDeleteBook(index, e)}>&times;</button>
           </div>
