@@ -118,7 +118,7 @@ function bookPages(){
     //return statement for the shelf component. map function included to loop through the books array and make sure the shelf contains the updated list of books
     return (
       <div onClick={handleShelfClick} className="shelfContainer">
-        {bookPages(book)}
+        {bookPages()}
         {bookInput()}
       <div className="shelf">
         {books.map((book, index) => (
