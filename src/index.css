@@ -196,4 +196,18 @@ gap: 10px;
   top: 50%;
   right: 50%;
   transform: translateY(-50%) translateX(50%);
+  border-radius: 4px;
+}
+
+.closePages {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
 }

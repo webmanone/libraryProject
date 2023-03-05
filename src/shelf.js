@@ -43,6 +43,12 @@ function Shelf() {
       e.stopPropagation();
       setShowInput(false);
     }
+
+    //function that hides the open book
+    function handleCancelPages(e) {
+      e.stopPropagation();
+      setShowBook(false);
+    }
   
     //function that shows the input div when the shelf is clicked.
     function handleShelfClick() {
@@ -82,6 +88,7 @@ function Shelf() {
  function handleBookClick(e) {
   e.stopPropagation();
   setShowBook(true);
+  setShowInput(false);
 }
 
 //function that shows the book
@@ -93,6 +100,8 @@ function bookPages(book){
       <div> Title: {book.title} </div>
       <div> Author: {book.author} </div>
       
+      <button className="closePages" onClick={handleCancelPages}>&times;</button>
+
       </div>
 
     )
