@@ -197,6 +197,7 @@ gap: 10px;
   right: 50%;
   transform: translateY(-50%) translateX(50%);
   border-radius: 4px;
+  border: solid 1px black;
 }
 
 .closePages {
