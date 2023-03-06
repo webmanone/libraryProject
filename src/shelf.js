@@ -101,6 +101,7 @@ function bookPages(){
       <div className='bookPages'>
         
       <div> Title: {selectedBook.title} </div>
+      <br />
       <div> Author: {selectedBook.author} </div>
       
       <button className="closePages" onClick={handleCancelPages}>&times;</button>
