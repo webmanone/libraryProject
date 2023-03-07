@@ -98,7 +98,7 @@ function Shelf() {
 function bookPages(){
   if (showBook) {
     return (
-      <div className='bookPages'>
+      /*<div className='bookPages'>
         
       <div> Title: {selectedBook.title} </div>
       <br />
@@ -107,6 +107,18 @@ function bookPages(){
       <button className="closePages" onClick={handleCancelPages}>&times;</button>
 
       </div>
+*/
+
+<div class="bigBook">
+  <div class="back"><button className="closePages" onClick={handleCancelPages}>&times;</button></div>
+  <div class="page6"></div>
+  <div class="page5"></div>
+  <div class="page4"></div>
+  <div class="page3"></div>
+  <div class="page2"></div>
+  <div class="page1"></div>
+  <div class="front"><div className='bookTitle'>{selectedBook.title}</div> <br /><div> by </div><br /> <div className='bookAuthor'>{selectedBook.author}</div></div>
+</div>
 
     )
   }  else {
