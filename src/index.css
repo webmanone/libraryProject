@@ -225,10 +225,10 @@ position: relative;
   cursor: pointer;
   backface-visibility: visible;
   z-index: 100;
-  right: 60%;
-  top: 50%;
+  right: 63%;
+  top: 55%;
   transform: translateY(-50%) translateX(50%);
-  transition: right 1.5s;
+  transition: right 2s;
 }
 
 .front {
@@ -302,40 +302,40 @@ position: relative;
 }
 
 .bigBook:hover .front {
-  transform: rotateY(-160deg) scale(1.1);
+  transform: rotateY(-160deg);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
 }
 
 .bigBook:hover .page1 {
-  transform: rotateY(-150deg) scale(1.1);
+  transform: rotateY(-150deg);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
 }
 
 .bigBook:hover .page2 {
-  transform: rotateY(-30deg) scale(1.1);
+  transform: rotateY(-30deg);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
 }
 
 .bigBook:hover .page3 {
-  transform: rotateY(-140deg) scale(1.1);
+  transform: rotateY(-140deg);
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
 }
 
 .bigBook:hover .page4 {
-  transform: rotateY(-40deg) scale(1.1);
+  transform: rotateY(-40deg) ;
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
 }
 
 .bigBook:hover .page5 {
-  transform: rotateY(-130deg) scale(1.1);
+  transform: rotateY(-130deg) ;
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
 }
 
 .bigBook:hover .page6 {
-  transform: rotateY(-50deg) scale(1.1);
+  transform: rotateY(-50deg) ;
   box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
 }
 
 .bigBook:hover .back {
-  transform: rotateY(-20deg) scale(1.1);
+  transform: rotateY(-20deg) ;
 }
